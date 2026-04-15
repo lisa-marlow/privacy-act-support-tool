@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Is my project subject to privacy obligations? (SCU Decision Tool)</title>
+
+  <style>
+    :root { --max: 920px; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      line-height: 1.45;
+      background: #fafafa;
+      color: #111;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 16px;
+    }
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: 1.35rem;
+    }
+    .subtle {
+      color: #444;
+      margin: 0.2rem 0 0 0;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e6e6e6;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+    }
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+    .pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border: 1px solid #e6e6e6;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      background: #fff;
+      color: #333;
+    }
+    .btnrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    button {
+      border: 1px solid #d0d0d0;
+      background: #fff;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background: #f5f5f5;
+    }
+    button.primary {
+      border-color: #bcbcbc;
+      font-weight: 600;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .small {
+      font-size: 0.92rem;
+    }
+    .muted {
+      color: #555;
+    }
+    details {
+      border: 1px dashed #d8d8d8;
+      border-radius: 10px;
+      padding: 10px 12px;
+      background: #fcfcfc;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .hr {
+      border-top: 1px solid #eee;
+      margin: 12px 0;
+    }
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .breadcrumb span {
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .toolbar button {
+      font-size: 0.92rem;
+      padding: 8px 10px;
+    }
+    .outcomeTitle {
+      font-size: 1.15rem;
+      margin: 0 0 8px 0;
+    }
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      border: 1px solid #e6e6e6;
+      background: #fff;
+    }
+    ul {
+      margin: 8px 0 0 18px;
+    }
+    .disclaimer {
+      font-size: 0.9rem;
+      color: #444;
+    }
+    .footer {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .helpBlock > *:first-child {
+      margin-top: 8px;
+    }
+    .helpBlock p {
+      margin: 8px 0 0 0;
+    }
+    .linklike {
+      background: none;
+      border: none;
+      color: #0066cc;
+      padding: 0;
+      text-decoration: underline;
+      cursor: pointer;
+      font: inherit;
+    }
+    .result {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 14px;
+      background: #fff;
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 1000;
+    }
+    .modal {
+      background: #fff;
+      max-width: 720px;
+      width: 100%;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 12px;
+      gap: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Is my research project subject to Privacy Legislation? (Decision Tool)</h1>
+      <p class="subtle small">Educational decision support for SCU researchers and staff.</p>
+    </div>
+  </header>
+
+  <main class="wrap stack" aria-live="polite">
+    <div class="card stack" id="introCard">
+      <div>
+        <span class="pill">Start here</span>
+        <h2 style="margin:10px 0 6px 0; font-size:1.15rem;">Privacy legislation and research</h2>
+        <p class="small" style="margin:0;">
+          This tool helps identify when privacy obligations are likely to be engaged and which pathway may apply, including the
+          <strong>Australian Privacy Principles (APPs)</strong> and, where relevant, the <strong>s95</strong> and <strong>s95A</strong> Guidelines.
+        </p>
+        <p class="small muted" style="margin:10px 0 0 0;">
+          It is an educational guide only. Nothing in this tool should be relied upon as legal advice. Researchers must ascertain the status of their own project with respect to privacy legislation and institutional requirements.
+        </p>
+
+        <details style="margin-top:12px;">
+          <summary>What this tool covers</summary>
+          <div class="small muted helpBlock">
+            <p>
+              This tool focuses mainly on research involving <strong>existing data or information about people</strong>, including pre-existing records, administrative datasets, health information, and other forms of personal information.
+            </p>
+          </div>
+        </details>
+
+        <details style="margin-top:12px;">
+          <summary>Important note</summary>
+          <div class="small muted helpBlock">
+            <p>
+              Even where the Privacy Act does not appear to be engaged in the way you first expect, ethics review, confidentiality obligations, contractual requirements, or SCU governance processes may still apply.
+            </p>
+          </div>
+        </details>
+
+        <div class="btnrow">
+          <button class="primary" id="startBtn">Start the decision tool</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stack" id="toolCard" style="display:none;">
+      <div class="toolbar">
+        <button id="backBtn" title="Go back one step">Back</button>
+        <button id="restartBtn" title="Restart the tool">Restart</button>
+      </div>
+
+      <div class="breadcrumb" id="breadcrumb"></div>
+
+      <div class="hr"></div>
+
+      <div id="app" class="stack"></div>
+    </div>
+
+    <div class="footer">
+      <p class="disclaimer">
+        <strong>Need advice?</strong> If you are unsure at any stage, please contact the Ethics Office, the Privacy Office, or your Faculty ADR / governance contact before proceeding.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    const tree = {
+      start: "q1_existing_data",
+      nodes: {
+        q1_existing_data: {
+          type: "yesno",
+          title: "Step 1 — Existing data or information",
+          question: "Does the research involve accessing or using existing data or information about people (i.e. pre-existing records or datasets)?",
+          help: `
+            <p>Includes:</p>
+            <ul>
+              <li>administrative records</li>
+              <li>health service records</li>
+              <li>student or staff records</li>
+              <li>datasets collected for non-research purposes</li>
+              <li>research data originally collected for another study</li>
+            </ul>
+          `,
+          yes: "q2_personal_info",
+          no: "out_no_existing_data"
+        },
+
+        out_no_existing_data: {
+          type: "result",
+          tag: "Outcome",
+          title: "Likely outside this privacy decision tree",
+          body: `
+            <p>If the project does not involve accessing or using <strong>existing</strong> data or information about people, this particular privacy pathway may not apply.</p>
+            <p><strong>Reminder:</strong> ethics review may still be required depending on the study design and level of risk.</p>
+          `,
+          hideContinue: true
+        },
+
+        q2_personal_info: {
+          type: "yesno",
+          title: "Step 2 — Personal information",
+          question: "Is the data <strong>personal information</strong> (i.e. about an identified or reasonably identifiable individual)?",
+          help: `
+            <p>If individuals can be identified directly or indirectly, including by combining fields, treat it as personal information.</p>
+          `,
+          yes: "q3_secondary_purpose",
+          no: "out_non_identifiable"
+        },
+
+        out_non_identifiable: {
+          type: "result",
+          tag: "Outcome",
+          title: "Non-identifiable data",
+          body: `
+            <p>If the dataset is genuinely <strong>non-identifiable</strong> and not reasonably re-identifiable, the Privacy Act is generally not engaged.</p>
+            <p><strong>Reminder:</strong> ethics review requirements may still apply depending on context, sensitivity, and reasonable expectations.</p>
+          `,
+          hideContinue: true
+        },
+
+        q3_secondary_purpose: {
+          type: "yesno",
+          title: "Step 3 — Secondary use or disclosure",
+          question: "Was the personal information originally collected for a different primary purpose (e.g. health service delivery, course administration, HR, compliance)?",
+          help: `
+            <p>This is a key trigger for <strong>secondary use or disclosure</strong> considerations under the Australian Privacy Principles (APPs).</p>
+          `,
+          yes: "q4_consent",
+          no: "out_collected_for_research"
+        },
+
+        out_collected_for_research: {
+          type: "result",
+          tag: "Outcome",
+          title: "Collected for this research purpose",
+          body: `
+            <p>If the personal information was collected for this research purpose, typically with consent, privacy obligations are usually managed through the consent process and appropriate data handling.</p>
+            <p>Proceed with ethics requirements as usual, ensuring secure storage and appropriate access controls.</p>
+          `,
+          hideContinue: true
+        },
+
+        q4_consent: {
+          type: "yesno",
+          title: "Step 4 — Consent",
+          question: "Will the research use or disclose the personal information <strong>without obtaining individual consent</strong> from the people whose data is being used?",
+          help: `
+            <p>If consent will be obtained for the research use or disclosure, the legal pathways for proceeding <strong>without consent</strong> may not be required.</p>
+          `,
+          yes: "q5_health_or_medical",
+          no: "out_consent_obtained"
+        },
+
+        out_consent_obtained: {
+          type: "result",
+          tag: "Outcome",
+          title: "Consent will be obtained",
+          body: `
+            <p>Where consent is obtained for the research use or disclosure, this generally satisfies the consent element under privacy requirements.</p>
+            <p>Continue with ethics review as required for the project.</p>
+          `,
+          hideContinue: true
+        },
+
+        q5_health_or_medical: {
+          type: "yesno",
+          title: "Step 5 — Health or medical research",
+          question: "Does the research involve <strong>health information</strong> or <strong>medical research</strong> (including epidemiological research) relevant to public health or public safety?",
+          help: `
+            <p>This branch is about projects likely to rely on the health research frameworks and the s95 or s95A Guidelines.</p>
+            <p><em>You can add OAIC examples here later, such as communicable diseases, cancer, mental health, injury prevention, or diabetes.</em></p>
+          `,
+          yes: "q6_commonwealth_agency",
+          no: "q7_app6_reasonable_expectations"
+        },
+
+q6_commonwealth_agency: {
+  type: "yesno",
+  title: "Step 6 — Commonwealth agency",
+  question: "Is the health information being obtained from a <strong>Commonwealth (Australian Government) agency</strong>?",
+  help: `
+    <p><strong>Commonwealth agencies</strong> are bodies that form part of the Australian federal government.</p>
+
+    <p>Examples include government departments and agencies such as the
+    <a href="https://www.abs.gov.au/" target="_blank">Australian Bureau of Statistics</a>
+    and the
+    <a href="https://www.aihw.gov.au/" target="_blank">Australian Institute of Health and Welfare</a>.</p>
+
+    <p>Universities, state government departments, public hospitals, charities, and private organisations are
+    <strong>not Commonwealth agencies</strong>. For privacy purposes they are treated as <strong>organisations</strong>.</p>
+  `,
+  yes: "out_s95",
+  no: "q6b_organisation_holder"
+},
+        q6b_organisation_holder: {
+          type: "yesno",
+          title: "Step 7 — Organisation as data holder",
+          question: "Is the health information being obtained from an <strong>organisation</strong> (e.g. a university, hospital, NGO, or private provider)?",
+          help: `
+            <p>If you are unsure who the data custodian is, pause and confirm this before proceeding.</p>
+          `,
+          yes: "out_s95a",
+          no: "out_holder_unclear"
+        },
+
+        out_s95: {
+          type: "result",
+          tag: "s95",
+          title: "Likely pathway: Guidelines under section 95",
+          body: `
+            <p>This project appears to involve health or medical research using personal information without consent where the information is held by a <strong>Commonwealth agency</strong>.</p>
+
+            <p><strong>Likely framework:</strong>
+<em><a href="https://www.nhmrc.gov.au/about-us/publications/guidelines-under-section-95-privacy-act-1988"
+target="_blank" rel="noopener">Guidelines under section 95 of the Privacy Act 1988</a></em>.
+</p>
+
+            <ul>
+              <li>HREC assessment is required under the s95 framework.</li>
+              <li>The project must satisfy the relevant public-interest and privacy-protection requirements.</li>
+              <li>If consent is not sought, a waiver must also meet the National Statement criteria (NS 2.3.10).</li>
+            </ul>
+          `,
+          popup: "waiver",
+          hideContinue: true
+        },
+
+        out_s95a: {
+          type: "result",
+          tag: "s95A",
+          title: "Likely pathway: Guidelines approved under section 95A",
+          body: `
+            <p>This project appears to involve health research using health information without consent where the information is held by an <strong>organisation</strong>.</p>
+
+            <p><strong>Likely framework:</strong> <em>Guidelines approved under section 95A of the Privacy Act 1988</em>.</p>
+
+            <ul>
+              <li>HREC assessment is required under the s95A framework.</li>
+              <li>The public interest in the research must substantially outweigh the public interest in protecting privacy.</li>
+              <li>If consent is not sought, a waiver must also meet the National Statement criteria (NS 2.3.10).</li>
+            </ul>
+          `,
+          popup: "waiver",
+          hideContinue: true
+        },
+
+        out_holder_unclear: {
+          type: "result",
+          tag: "Stop",
+          title: "Data custodian unclear",
+          body: `
+            <p>It is unclear whether the information is held by a Commonwealth agency or an organisation.</p>
+            <p><strong>Next step:</strong> confirm the status of the data custodian, then return to this decision tool.</p>
+          `,
+          hideContinue: true
+        },
+
+        q7_app6_reasonable_expectations: {
+          type: "yesno",
+          title: "Step 6 — Reasonable expectations",
+          question: "Would individuals <strong>reasonably expect</strong> their information to be used or disclosed for this research?",
+          help: `
+            <p>Under APP 6, secondary use or disclosure may be permitted where individuals would reasonably expect it and the secondary purpose is sufficiently related to the primary purpose.</p>
+            <p><em>You can add examples of “reasonable expectation” in common SCU contexts later.</em></p>
+          `,
+          yes: "q8_relatedness_test",
+          no: "out_app6_consent_or_not_permitted"
+        },
+
+        q8_relatedness_test: {
+          type: "yesno",
+          title: "Step 7 — Relatedness",
+          question: "Is the research use or disclosure <strong>related</strong> to the original (primary) purpose of collection?",
+          help: `
+            <p>For sensitive information, the test is usually stricter: the secondary purpose must often be <strong>directly related</strong>.</p>
+            <p>If you are dealing with sensitive information, answer “Yes” only if the relationship is clearly strong.</p>
+          `,
+          yes: "q9_proceeding_without_consent",
+          no: "out_app6_consent_or_not_permitted"
+        },
+
+        q9_proceeding_without_consent: {
+          type: "yesno",
+          title: "Step 8 — Proceeding without consent",
+          question: "Is the project proposing to proceed <strong>without</strong> seeking individual consent?",
+          help: `
+            <p>If consent is not sought for identifiable information, a <strong>waiver of consent</strong> is likely to be required under the National Statement (NS 2.3.10).</p>
+          `,
+          yes: "out_waiver_required",
+          no: "out_consent_obtained"
+        },
+
+        out_app6_consent_or_not_permitted: {
+          type: "result",
+          tag: "APP 6",
+          title: "APP 6 basis unclear or likely requires consent",
+          body: `
+            <p>If individuals would not reasonably expect this use or disclosure, or if the research purpose is not sufficiently related to the primary purpose of collection, relying on APP 6 may not be available.</p>
+
+            <p>In practice, next steps typically include:</p>
+            <ul>
+              <li>seeking individual consent; and/or</li>
+              <li>seeking advice on whether another permitted basis exists in the specific context.</li>
+            </ul>
+
+            <p><strong>Reminder:</strong> researchers must ascertain the status of their own proposal with respect to privacy legislation.</p>
+          `,
+          hideContinue: true
+        },
+
+        out_waiver_required: {
+          type: "result",
+          tag: "Waiver",
+          title: "Waiver of consent likely required",
+          body: `
+            <p>If individual consent is not sought for the use of identifiable information in research, researchers must request a <strong>waiver of consent</strong>.</p>
+
+            <p><strong>National Statement:</strong> see NS 2.3, especially 2.3.10.</p>
+
+            <p><strong>Important:</strong> NS 2.3.10(i) requires that a waiver must <strong>not</strong> be prohibited by State, federal, or international law.</p>
+          `,
+          popup: "waiver",
+          hideContinue: true
+        }
+      }
+    };
+
+    const state = {
+      history: [],
+      currentNodeId: tree.start,
+      answers: {}
+    };
+
+    const introCard = document.getElementById("introCard");
+    const toolCard = document.getElementById("toolCard");
+    const startBtn = document.getElementById("startBtn");
+    const backBtn = document.getElementById("backBtn");
+    const restartBtn = document.getElementById("restartBtn");
+    const breadcrumb = document.getElementById("breadcrumb");
+
+    function getNode(idOrObj) {
+      if (typeof idOrObj === "string") return tree.nodes[idOrObj];
+      return idOrObj;
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, s => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#039;"
+      }[s]));
+    }
+
+    function setBreadcrumb() {
+      if (!state.history.length) {
+        breadcrumb.innerHTML = "";
+        return;
+      }
+
+      const labels = state.history.map(step => {
+        const node = getNode(step.nodeId);
+        if (!node) return step.nodeId;
+        return node.title || node.question || step.nodeId;
+      });
+
+      breadcrumb.innerHTML =
+        `<span><strong>Path:</strong></span>` +
+        labels.map(l => `<span>› ${escapeHtml(stripHtml(l))}</span>`).join("");
+    }
+
+    function stripHtml(html) {
+      const tmp = document.createElement("div");
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || "";
+    }
+
+    function render() {
+      const app = document.getElementById("app");
+      app.innerHTML = "";
+      setBreadcrumb();
+
+      const node = getNode(state.currentNodeId);
+      if (!node) {
+        app.appendChild(el("div", {}, "Unable to load this step."));
+        return;
+      }
+
+      if (node.type === "yesno") {
+        renderYesNo(app, node);
+        return;
+      }
+
+      if (node.type === "multi") {
+        renderMulti(app, node);
+        return;
+      }
+
+      if (node.type === "result") {
+        renderResult(app, node);
+        return;
+      }
+
+      app.appendChild(el("div", {}, "Unknown node type."));
+    }
+
+    function renderYesNo(app, node) {
+      const box = el("div", { className: "stack" });
+
+      const h = document.createElement("div");
+      h.innerHTML = `<div class="pill">Question</div>
+                     <h2 style="margin:10px 0 6px 0; font-size:1.15rem;">${escapeHtml(node.title || "Question")}</h2>
+                     <div class="small">${node.question}</div>`;
+      box.appendChild(h);
+
+      if (node.help) {
+        const d = document.createElement("details");
+        const s = document.createElement("summary");
+        s.textContent = "Help: clarifications & examples";
+        d.appendChild(s);
+
+        const div = document.createElement("div");
+        div.className = "small muted helpBlock";
+        div.innerHTML = node.help;
+        d.appendChild(div);
+        box.appendChild(d);
+      }
+
+      const row = el("div", { className: "btnrow" });
+      row.appendChild(btn("Yes", () => go(node.yes, true), false, true));
+      row.appendChild(btn("No", () => go(node.no, false)));
+      box.appendChild(row);
+
+      app.appendChild(box);
+    }
+
+    function renderMulti(app, node) {
+      const box = el("div", { className: "stack" });
+
+      const h = document.createElement("div");
+      h.innerHTML = `<div class="pill">Question</div>
+                     <h2 style="margin:10px 0 6px 0; font-size:1.15rem;">${escapeHtml(node.title || "Question")}</h2>
+                     <div class="small">${node.question}</div>`;
+      box.appendChild(h);
+
+      if (node.help) {
+        const d = document.createElement("details");
+        const s = document.createElement("summary");
+        s.textContent = "Help: clarifications & examples";
+        d.appendChild(s);
+
+        const div = document.createElement("div");
+        div.className = "small muted helpBlock";
+        div.innerHTML = node.help;
+        d.appendChild(div);
+        box.appendChild(d);
+      }
+
+      const list = el("div", {});
+      const key = state.currentNodeId;
+      const selected = new Set(state.answers[key] || []);
+
+      node.options.forEach((opt) => {
+        const id = `opt_${key}_${hash(opt)}`;
+        const wrapper = el("div", {});
+        const input = el("input", { type: "checkbox", id });
+
+        input.checked = selected.has(opt);
+
+        input.addEventListener("change", () => {
+          const now = new Set(state.answers[key] || []);
+          if (input.checked) now.add(opt);
+          else now.delete(opt);
+
+          if (opt === "None of these" && input.checked) {
+            node.options.filter((o) => o !== "None of these").forEach((o) => now.delete(o));
+          }
+          if (opt !== "None of these" && input.checked) now.delete("None of these");
+
+          state.answers[key] = Array.from(now);
+          render();
+        });
+
+        wrapper.appendChild(input);
+        wrapper.appendChild(el("label", { htmlFor: id, style: "margin-left:8px" }, opt));
+        list.appendChild(wrapper);
+      });
+
+      box.appendChild(list);
+
+      if (node.popup === "waiver") {
+        const waiverBtn = document.createElement("button");
+        waiverBtn.className = "linklike";
+        waiverBtn.type = "button";
+        waiverBtn.textContent = "Why might secondary data require a waiver of consent?";
+        waiverBtn.style.display = "block";
+        waiverBtn.style.marginTop = "8px";
+        waiverBtn.style.marginBottom = "8px";
+        waiverBtn.addEventListener("click", () => showModal("Waiver of consent (explainer)", WAIVER_INFO_HTML));
+        box.appendChild(waiverBtn);
+      }
+
+      const nextBtn = btn("Continue", () => {
+        const sel = state.answers[state.currentNodeId] || [];
+        const next = node.next(sel);
+        if (next !== state.currentNodeId) go(next, sel);
+      }, false, true);
+
+      nextBtn.style.marginTop = "12px";
+      box.appendChild(nextBtn);
+
+      app.appendChild(box);
+    }
+
+    function renderResult(app, node) {
+      const box = el("div", { className: "stack" });
+
+      const result = el("div", { className: "result" });
+      result.innerHTML = `
+        <div class="tag">${escapeHtml(node.tag || "Result")}</div>
+        <h2 class="outcomeTitle">${escapeHtml(node.title || "Outcome")}</h2>
+      `;
+
+      const bodyDiv = document.createElement("div");
+      bodyDiv.className = "small";
+      bodyDiv.innerHTML = node.body;
+      result.appendChild(bodyDiv);
+
+      if (node.extra && node.extra.length) {
+        const ul = el("ul", { className: "small" });
+        node.extra.forEach((x) => {
+          const li = el("li", {});
+          li.innerHTML = x;
+          ul.appendChild(li);
+        });
+        result.appendChild(ul);
+      }
+
+      if (node.popup === "waiver") {
+        const waiverBtn = document.createElement("button");
+        waiverBtn.className = "linklike";
+        waiverBtn.type = "button";
+        waiverBtn.textContent = "What’s a waiver of consent?";
+        waiverBtn.addEventListener("click", () => showModal("Waiver of consent (explainer)", WAIVER_INFO_HTML));
+        result.appendChild(waiverBtn);
+      }
+
+      box.appendChild(result);
+
+      if (!node.hideContinue) {
+        if (node.nextNode) {
+          const cont = btn("Continue", () => go(node.nextNode, "result"), false, true);
+          box.appendChild(cont);
+        } else if (typeof node.next === "function") {
+          const cont = btn("Continue", () => go(node.next(), "result"), false, true);
+          box.appendChild(cont);
+        }
+      }
+
+      app.appendChild(box);
+    }
+
+    function go(next, answerValue) {
+      state.history.push({
+        nodeId: state.currentNodeId,
+        answers: JSON.parse(JSON.stringify(state.answers))
+      });
+
+      state.answers[state.currentNodeId] = answerValue;
+
+      if (typeof next === "string") {
+        state.currentNodeId = next;
+      } else {
+        state.currentNodeId = "__inline__" + Math.random().toString(16).slice(2);
+        tree.nodes[state.currentNodeId] = next;
+      }
+
+      render();
+    }
+
+    function back() {
+      if (!state.history.length) return;
+      const prev = state.history.pop();
+      state.currentNodeId = prev.nodeId;
+      state.answers = prev.answers;
+      render();
+    }
+
+    function restart() {
+      state.history = [];
+      state.currentNodeId = tree.start;
+      state.answers = {};
+      render();
+    }
+
+    function btn(label, onClick, disabled = false, primary = false) {
+      const b = el("button", { className: primary ? "primary" : "" });
+      b.textContent = label;
+      b.disabled = !!disabled;
+      b.addEventListener("click", onClick);
+      return b;
+    }
+
+    function el(tag, attrs = {}, ...children) {
+      const node = document.createElement(tag);
+      Object.entries(attrs).forEach(([k, v]) => {
+        if (k === "className") node.className = v;
+        else if (k === "htmlFor") node.htmlFor = v;
+        else node.setAttribute(k, v);
+      });
+
+      children.flat().forEach((ch) => {
+        if (ch == null) return;
+        if (typeof ch === "string") node.appendChild(document.createTextNode(ch));
+        else node.appendChild(ch);
+      });
+
+      return node;
+    }
+
+    function hash(s) {
+      let h = 0;
+      for (let i = 0; i < s.length; i++) h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+      return Math.abs(h);
+    }
+
+    const WAIVER_INFO_HTML = `
+      <p><strong>When is a waiver of consent needed?</strong> Typically, researchers need to apply for a waiver of consent when they propose to analyse an existing dataset of people’s information that was collected for purposes other than research. In these cases, individuals whose data is being used will not have consented to its use in research, so an ethics committee must determine whether it is appropriate for the research to proceed without participants’ explicit consent.</p>
+
+      <p><strong>A waiver is required</strong> for any dataset where consent has not been given, regardless of whether it contains identifying details. The single exception to this is research using <em>non-identifiable data that has been exempted from review</em>, where the decision to exempt takes priority. Most often, waivers can be approved via a non-HREC ethics review process.</p>
+
+      <p><strong>HREC approval is required</strong> where the dataset contains identifiable information and either the research is medical in nature or the dataset includes health information.</p>
+
+      <p><strong>National Statement criteria:</strong> The conditions for granting a waiver are detailed in the <a href="https://www.nhmrc.gov.au/about-us/publications/national-statement-ethical-conduct-human-research-2023" target="_blank" rel="noopener noreferrer">National Statement Chapter 2.3.10</a>. Researchers seeking a waiver must demonstrate that the research meets <em>all nine</em> criteria listed.</p>
+    `;
+
+    function showModal(title, bodyHtml) {
+      const overlay = document.createElement("div");
+      overlay.className = "modal-overlay";
+      overlay.tabIndex = -1;
+
+      const box = document.createElement("div");
+      box.className = "modal";
+      box.setAttribute("role", "dialog");
+      box.setAttribute("aria-modal", "true");
+
+      const h = document.createElement("h3");
+      h.textContent = title;
+
+      const body = document.createElement("div");
+      body.innerHTML = bodyHtml;
+
+      const actions = document.createElement("div");
+      actions.className = "actions";
+
+      const closeBtn = document.createElement("button");
+      closeBtn.textContent = "Close";
+      closeBtn.addEventListener("click", close);
+
+      actions.appendChild(closeBtn);
+
+      box.appendChild(h);
+      box.appendChild(body);
+      box.appendChild(actions);
+      overlay.appendChild(box);
+      document.body.appendChild(overlay);
+
+      function close() {
+        document.removeEventListener("keydown", onKeyDown);
+        overlay.remove();
+      }
+
+      function onKeyDown(e) {
+        if (e.key === "Escape") close();
+      }
+
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) close();
+      });
+
+      document.addEventListener("keydown", onKeyDown);
+      closeBtn.focus();
+    }
+
+    function start() {
+      introCard.style.display = "none";
+      toolCard.style.display = "block";
+      restart();
+    }
+
+    startBtn.addEventListener("click", start);
+    backBtn.addEventListener("click", back);
+    restartBtn.addEventListener("click", restart);
+  </script>
+</body>
+</html>
