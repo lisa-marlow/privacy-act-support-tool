@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Is my project subject to privacy obligations? (SCU Decision Tool)</title>
+  <title>Is my research project subject to privacy obligations? (SCU Decision Tool)</title>
 
   <style>
     :root { --max: 920px; }
@@ -189,6 +189,7 @@
     <div class="wrap">
       <h1>Is my research project subject to Privacy Legislation? (Decision Tool)</h1>
       <p class="subtle small">Educational decision support for SCU researchers and staff.</p>
+      <p class="subtle small">Version 0.1 — April 2026</p>	
     </div>
   </header>
 
@@ -244,7 +245,15 @@
 
     <div class="footer">
       <p class="disclaimer">
-        <strong>Need advice?</strong> If you are unsure at any stage, please contact the Ethics Office, the Privacy Office, or your Faculty ADR / governance contact before proceeding.
+        <strong>Need advice?</strong> If you are unsure at any stage, please contact the Human Research Ethics Office at
+        <a href="mailto:human.ethics@scu.edu.au">human.ethics@scu.edu.au</a>, your Faculty ADR / governance contact before proceeding, or the Privacy Officer on <a href="mailto:privacy@scu.edu.au">privacy@scu.edu.au</a>.
+        Early clarification helps prevent delays later.
+      </p>
+	  <p class="small muted">
+    The source code for this decision tool is available at
+    <a href="https://github.com/lisa-marlow/privacy-act-support-tool" target="_blank" rel="noopener noreferrer">
+    the GitHub repository</a>, where it can be downloaded or adapted for other Australian institutions.
+  </p>    	
       </p>
     </div>
   </main>
@@ -879,16 +888,5 @@ target="_blank" rel="noopener">Guidelines under section 95 of the Privacy Act 19
     backBtn.addEventListener("click", back);
     restartBtn.addEventListener("click", restart);
   </script>
-  <p id="last-updated" style="font-size: 0.9em; color: #666;"></p>
-  
-script>
-  const lastUpdated = new Date(document.lastModified);
-  document.getElementById("last-updated").textContent =
-    "Last updated: " + lastUpdated.toLocaleDateString("en-AU", {
-      day: "numeric",
-      month: "long",
-      year: "numeric"
-    });
-</script>
 </body>
 </html>
