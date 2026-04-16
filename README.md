@@ -41,10 +41,10 @@ Final determinations always rest with the relevant decision‑makers, including 
 
 Even where the Privacy Act does not appear to be engaged in the way a researcher first expects:
 
-- Ethics review may still be required
-- Confidentiality obligations may apply
+- Ethics review will be required
+- Confidentiality obligations apply
 - Consent requirements may still be relevant
-- Other SCU governance processes may still be triggered
+- Other SCU governance processes may be triggered
 
 Users are encouraged to seek advice where uncertainty remains.
 
