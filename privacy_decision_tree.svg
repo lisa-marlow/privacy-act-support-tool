@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" viewBox="0 0 900 1180" font-family="system-ui, -apple-system, Arial, sans-serif" font-size="13" fill="#111">
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#7c5cbf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#1d7a5f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════
+       SHARED TRUNK (Steps 1–5, centred at x=450)
+       ═══════════════════════════════════════════════ -->
+
+  <!-- START -->
+  <rect x="330" y="20" width="240" height="40" rx="20" fill="#e8e6f0" stroke="#9b8ecf" stroke-width="1"/>
+  <text x="450" y="44" text-anchor="middle" font-weight="600" fill="#3d2b7a">Research project</text>
+
+  <line x1="450" y1="60" x2="450" y2="90" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- Q1: Existing data? -->
+  <rect x="280" y="90" width="340" height="54" rx="8" fill="#e8f0fb" stroke="#4a7fcb" stroke-width="1"/>
+  <text x="450" y="111" text-anchor="middle" font-weight="600" fill="#1a3d7a">Step 1 — Existing data?</text>
+  <text x="450" y="130" text-anchor="middle" font-size="11.5" fill="#2a4a80">Pre-existing records or datasets about people</text>
+
+  <!-- Q1 No → left exit -->
+  <path d="M280 117 L180 117 L180 174" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="228" y="110" text-anchor="middle" font-size="11" fill="#555">No</text>
+  <rect x="100" y="174" width="160" height="50" rx="8" fill="#f0ede8" stroke="#aaa" stroke-width="1"/>
+  <text x="180" y="193" text-anchor="middle" font-size="11.5" fill="#444">Outside this</text>
+  <text x="180" y="210" text-anchor="middle" font-size="11.5" fill="#444">privacy pathway</text>
+
+  <!-- Q1 Yes → down -->
+  <line x1="450" y1="144" x2="450" y2="174" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="462" y="163" font-size="11" fill="#555">Yes</text>
+
+  <!-- Q2: Personal information? -->
+  <rect x="280" y="174" width="340" height="54" rx="8" fill="#e8f0fb" stroke="#4a7fcb" stroke-width="1"/>
+  <text x="450" y="195" text-anchor="middle" font-weight="600" fill="#1a3d7a">Step 2 — Personal information?</text>
+  <text x="450" y="214" text-anchor="middle" font-size="11.5" fill="#2a4a80">Identified or reasonably identifiable individual</text>
+
+  <!-- Q2 No → right exit -->
+  <path d="M620 201 L720 201 L720 258" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="668" y="194" text-anchor="middle" font-size="11" fill="#555">No</text>
+  <rect x="640" y="258" width="160" height="50" rx="8" fill="#f0ede8" stroke="#aaa" stroke-width="1"/>
+  <text x="720" y="277" text-anchor="middle" font-size="11.5" fill="#444">Non-identifiable —</text>
+  <text x="720" y="294" text-anchor="middle" font-size="11.5" fill="#444">Privacy Act not engaged</text>
+
+  <!-- Q2 Yes → down -->
+  <line x1="450" y1="228" x2="450" y2="258" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="462" y="247" font-size="11" fill="#555">Yes</text>
+
+  <!-- Q3: Secondary purpose? -->
+  <rect x="280" y="258" width="340" height="54" rx="8" fill="#e8f0fb" stroke="#4a7fcb" stroke-width="1"/>
+  <text x="450" y="279" text-anchor="middle" font-weight="600" fill="#1a3d7a">Step 3 — Secondary purpose?</text>
+  <text x="450" y="298" text-anchor="middle" font-size="11.5" fill="#2a4a80">Data collected originally for a different purpose</text>
+
+  <!-- Q3 No → right exit -->
+  <path d="M620 285 L720 285 L720 342" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="668" y="278" text-anchor="middle" font-size="11" fill="#555">No</text>
+  <rect x="640" y="342" width="160" height="50" rx="8" fill="#f0ede8" stroke="#aaa" stroke-width="1"/>
+  <text x="720" y="361" text-anchor="middle" font-size="11.5" fill="#444">Collected for this</text>
+  <text x="720" y="378" text-anchor="middle" font-size="11.5" fill="#444">research — use consent</text>
+
+  <!-- Q3 Yes → down -->
+  <line x1="450" y1="312" x2="450" y2="342" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="462" y="331" font-size="11" fill="#555">Yes</text>
+
+  <!-- Q4: Without consent? -->
+  <rect x="280" y="342" width="340" height="54" rx="8" fill="#e8f0fb" stroke="#4a7fcb" stroke-width="1"/>
+  <text x="450" y="363" text-anchor="middle" font-weight="600" fill="#1a3d7a">Step 4 — Without consent?</text>
+  <text x="450" y="382" text-anchor="middle" font-size="11.5" fill="#2a4a80">Proposed to use/disclose without individual consent</text>
+
+  <!-- Q4 No → left exit -->
+  <path d="M280 369 L180 369 L180 426" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="228" y="362" text-anchor="middle" font-size="11" fill="#555">No</text>
+  <rect x="100" y="426" width="160" height="50" rx="8" fill="#f0ede8" stroke="#aaa" stroke-width="1"/>
+  <text x="180" y="445" text-anchor="middle" font-size="11.5" fill="#444">Consent obtained —</text>
+  <text x="180" y="462" text-anchor="middle" font-size="11.5" fill="#444">proceed with ethics</text>
+
+  <!-- Q4 Yes → down -->
+  <line x1="450" y1="396" x2="450" y2="426" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="462" y="415" font-size="11" fill="#555">Yes</text>
+
+  <!-- Q5: Health or medical? — FORK NODE -->
+  <rect x="280" y="426" width="340" height="54" rx="8" fill="#e8f0fb" stroke="#4a7fcb" stroke-width="1"/>
+  <text x="450" y="447" text-anchor="middle" font-weight="600" fill="#1a3d7a">Step 5 — Health or medical research?</text>
+  <text x="450" y="466" text-anchor="middle" font-size="11.5" fill="#2a4a80">Health information or epidemiological research</text>
+
+  <!-- ═══════════════════════════════════════════════
+       RIGHT BRANCH: HEALTH / s95 / s95A  (x ~ 690)
+       ═══════════════════════════════════════════════ -->
+
+  <!-- Q5 Yes → right into health branch -->
+  <path d="M620 453 L740 453 L740 516" fill="none" stroke="#7c5cbf" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+  <text x="678" y="447" text-anchor="middle" font-size="11" fill="#7c5cbf">Yes</text>
+
+  <!-- Q6: Commonwealth agency? -->
+  <rect x="620" y="516" width="240" height="54" rx="8" fill="#f0eafb" stroke="#9b6fcf" stroke-width="1"/>
+  <text x="740" y="537" text-anchor="middle" font-weight="600" fill="#4a1f8a">Step 6 — Commonwealth agency?</text>
+  <text x="740" y="556" text-anchor="middle" font-size="11.5" fill="#5a2a90">Health data held by a federal body</text>
+
+  <!-- Q6 Yes → right exit: s95 -->
+  <path d="M860 543 L900 543" fill="none" stroke="#7c5cbf" stroke-width="1.5"/>
+  <!-- right column label -->
+  <text x="870" y="537" font-size="11" fill="#7c5cbf">Yes</text>
+
+  <!-- s95 outcome box floated right; use a tall right column placement -->
+  <rect x="760" y="596" width="120" height="54" rx="8" fill="#e8dff8" stroke="#9b6fcf" stroke-width="1.5"/>
+  <text x="820" y="617" text-anchor="middle" font-weight="600" font-size="12" fill="#3d1a7a">s95 pathway</text>
+  <text x="820" y="635" text-anchor="middle" font-size="11" fill="#5a2a90">HREC review required</text>
+  <path d="M860 543 L880 543 L880 623 L882 623" fill="none" stroke="#7c5cbf" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+
+  <!-- Q6 No → down -->
+  <line x1="740" y1="570" x2="740" y2="600" stroke="#7c5cbf" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+  <text x="752" y="589" font-size="11" fill="#7c5cbf">No</text>
+
+  <!-- Q6b: Organisation as data holder? -->
+  <rect x="620" y="600" width="240" height="54" rx="8" fill="#f0eafb" stroke="#9b6fcf" stroke-width="1"/>
+  <text x="740" y="621" text-anchor="middle" font-weight="600" fill="#4a1f8a">Step 7 — Organisation as holder?</text>
+  <text x="740" y="640" text-anchor="middle" font-size="11.5" fill="#5a2a90">University, hospital, NGO, private provider</text>
+
+  <!-- Q6b Yes → down: s95A -->
+  <line x1="740" y1="654" x2="740" y2="684" stroke="#7c5cbf" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+  <text x="752" y="673" font-size="11" fill="#7c5cbf">Yes</text>
+  <rect x="620" y="684" width="240" height="54" rx="8" fill="#e8dff8" stroke="#9b6fcf" stroke-width="1.5"/>
+  <text x="740" y="705" text-anchor="middle" font-weight="600" font-size="12" fill="#3d1a7a">s95A pathway</text>
+  <text x="740" y="723" text-anchor="middle" font-size="11" fill="#5a2a90">HREC review required</text>
+
+  <!-- Q6b No → right exit: custodian unclear -->
+  <path d="M860 627 L900 627 L900 752 L882 752" fill="none" stroke="#aaa" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="868" y="621" font-size="11" fill="#888">No / unclear</text>
+  <rect x="760" y="738" width="120" height="50" rx="8" fill="#fdf3e0" stroke="#c8952a" stroke-width="1"/>
+  <text x="820" y="757" text-anchor="middle" font-size="11.5" fill="#7a5210">Custodian</text>
+  <text x="820" y="774" text-anchor="middle" font-size="11.5" fill="#7a5210">unclear — stop</text>
+
+  <!-- ═══════════════════════════════════════════════
+       LEFT BRANCH: APP 6  (x ~ 160)
+       ═══════════════════════════════════════════════ -->
+
+  <!-- Q5 No → left into APP 6 branch -->
+  <path d="M280 453 L160 453 L160 516" fill="none" stroke="#1d7a5f" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+  <text x="222" y="447" text-anchor="middle" font-size="11" fill="#1d7a5f">No</text>
+
+  <!-- Q7: Reasonable expectation? -->
+  <rect x="40" y="516" width="240" height="54" rx="8" fill="#dff5ec" stroke="#1d9e75" stroke-width="1"/>
+  <text x="160" y="537" text-anchor="middle" font-weight="600" fill="#0a4d36">Step 6 — APP 6: Reasonable expectation?</text>
+  <text x="160" y="556" text-anchor="middle" font-size="11.5" fill="#0d6045">Individuals would expect this use</text>
+
+  <!-- Q7 No → left exit -->
+  <path d="M40 543 L10 543 L10 620 L38 620" fill="none" stroke="#aaa" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="23" y="536" font-size="11" fill="#888">No</text>
+  <rect x="38" y="606" width="164" height="50" rx="8" fill="#fdf3e0" stroke="#c8952a" stroke-width="1"/>
+  <text x="120" y="625" text-anchor="middle" font-size="11.5" fill="#7a5210">APP 6 basis unclear —</text>
+  <text x="120" y="642" text-anchor="middle" font-size="11.5" fill="#7a5210">seek consent or advice</text>
+
+  <!-- Q7 Yes → down -->
+  <line x1="160" y1="570" x2="160" y2="600" stroke="#1d7a5f" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+  <text x="172" y="589" font-size="11" fill="#1d7a5f">Yes</text>
+
+  <!-- Q8: Related purpose? -->
+  <rect x="40" y="600" width="240" height="54" rx="8" fill="#dff5ec" stroke="#1d9e75" stroke-width="1"/>
+  <text x="160" y="621" text-anchor="middle" font-weight="600" fill="#0a4d36">Step 7 — APP 6: Related purpose?</text>
+  <text x="160" y="640" text-anchor="middle" font-size="11.5" fill="#0d6045">Research related to original collection purpose</text>
+
+  <!-- Q8 No → left exit -->
+  <path d="M40 627 L10 627 L10 704 L38 704" fill="none" stroke="#aaa" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="23" y="620" font-size="11" fill="#888">No</text>
+  <rect x="38" y="690" width="164" height="50" rx="8" fill="#fdf3e0" stroke="#c8952a" stroke-width="1"/>
+  <text x="120" y="709" text-anchor="middle" font-size="11.5" fill="#7a5210">APP 6 not available —</text>
+  <text x="120" y="726" text-anchor="middle" font-size="11.5" fill="#7a5210">seek consent or advice</text>
+
+  <!-- Q8 Yes → down -->
+  <line x1="160" y1="654" x2="160" y2="684" stroke="#1d7a5f" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+  <text x="172" y="673" font-size="11" fill="#1d7a5f">Yes</text>
+
+  <!-- Q9: Proceeding without consent? -->
+  <rect x="40" y="684" width="240" height="54" rx="8" fill="#dff5ec" stroke="#1d9e75" stroke-width="1"/>
+  <text x="160" y="705" text-anchor="middle" font-weight="600" fill="#0a4d36">Step 8 — APP 6: Without consent?</text>
+  <text x="160" y="724" text-anchor="middle" font-size="11.5" fill="#0d6045">Proceeding without individual consent</text>
+
+  <!-- Q9 No → left exit: consent obtained -->
+  <path d="M40 711 L10 711 L10 788 L38 788" fill="none" stroke="#aaa" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="23" y="704" font-size="11" fill="#888">No</text>
+  <rect x="38" y="774" width="164" height="50" rx="8" fill="#f0ede8" stroke="#aaa" stroke-width="1"/>
+  <text x="120" y="793" text-anchor="middle" font-size="11.5" fill="#444">Consent obtained —</text>
+  <text x="120" y="810" text-anchor="middle" font-size="11.5" fill="#444">proceed with ethics</text>
+
+  <!-- Q9 Yes → down: waiver -->
+  <line x1="160" y1="738" x2="160" y2="768" stroke="#1d7a5f" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+  <text x="172" y="757" font-size="11" fill="#1d7a5f">Yes</text>
+  <rect x="40" y="768" width="240" height="54" rx="8" fill="#fce8e4" stroke="#c04030" stroke-width="1.5"/>
+  <text x="160" y="789" text-anchor="middle" font-weight="600" fill="#7a1a10">Waiver of consent required</text>
+  <text x="160" y="808" text-anchor="middle" font-size="11.5" fill="#8a2010">See National Statement 2.3.10</text>
+
+  <!-- ═══════════════════════════════════════════════
+       LEGEND
+       ═══════════════════════════════════════════════ -->
+  <rect x="40" y="860" width="820" height="64" rx="8" fill="none" stroke="#ccc" stroke-width="1" stroke-dasharray="5 3"/>
+  <text x="60" y="880" font-weight="600" font-size="12" fill="#333">Legend</text>
+
+  <rect x="60" y="890" width="14" height="14" rx="3" fill="#e8f0fb" stroke="#4a7fcb" stroke-width="1"/>
+  <text x="80" y="902" font-size="11.5" fill="#333">General question</text>
+
+  <rect x="200" y="890" width="14" height="14" rx="3" fill="#f0eafb" stroke="#9b6fcf" stroke-width="1"/>
+  <text x="220" y="902" font-size="11.5" fill="#333">Health / s95 pathway</text>
+
+  <rect x="380" y="890" width="14" height="14" rx="3" fill="#dff5ec" stroke="#1d9e75" stroke-width="1"/>
+  <text x="400" y="902" font-size="11.5" fill="#333">APP 6 pathway</text>
+
+  <rect x="540" y="890" width="14" height="14" rx="3" fill="#fdf3e0" stroke="#c8952a" stroke-width="1"/>
+  <text x="560" y="902" font-size="11.5" fill="#333">Action required / stop</text>
+
+  <rect x="710" y="890" width="14" height="14" rx="3" fill="#fce8e4" stroke="#c04030" stroke-width="1.5"/>
+  <text x="730" y="902" font-size="11.5" fill="#333">Waiver outcome</text>
+
+  <!-- ═══════════════════════════════════════════════
+       CAPTION
+       ═══════════════════════════════════════════════ -->
+  <text x="450" y="960" text-anchor="middle" font-size="11" fill="#888">Privacy legislation decision tool — SCU Human Research Ethics Office | Version 0.1, April 2026</text>
+  <text x="450" y="978" text-anchor="middle" font-size="11" fill="#aaa">Educational guide only. Not legal advice. Source: github.com/lisa-marlow/privacy-act-support-tool</text>
+
+</svg>
