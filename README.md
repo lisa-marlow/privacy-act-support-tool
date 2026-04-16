@@ -19,6 +19,11 @@ The tool focuses primarily on **research use of data or information about people
 
 ---
 
+## Decision logic (simplified)
+
+![Privacy legislation decision tree](privacy_decision_tree.svg)
+---
+
 ## What this tool does *not* do
 
 This tool:
