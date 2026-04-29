@@ -1,5 +1,5 @@
 
-# Privacy Act, 1988 (Cwth) Support Tool for Researchers
+# Privacy Act, 1988 (Cwth): Support Tool for Researchers
 
 This repository hosts an interactive decision-support tool designed to assist researchers in thinking through whether, and how, privacy obligations may be engaged in the context of their research activities.
 
