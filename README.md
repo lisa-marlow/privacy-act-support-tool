@@ -6,6 +6,8 @@ This repository hosts an interactive decision-support tool designed to assist re
 The tool is intended for use by Southern Cross University (SCU) researchers and staff, particularly for projects involving existing data, administrative records, health information, or other information about individuals.
 
 ---
+## Disclaimer
+Nothing in this tool may be relied upon as legal advice. It is intended to explain how the Privacy Act applies to research generally; researchers must ascertain the status of their own research proposals with respect to Privacy legislation.
 
 ## Purpose and scope
 
